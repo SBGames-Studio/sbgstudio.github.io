@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ro">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pagină demonstrativă</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --bg:#f7f8fb;
+            --card:#ffffff;
+            --accent:#1f6feb;
+            --muted:#6b7280;
+            --radius:12px;
+            --maxw:1100px;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background:var(--bg);
+            color:#0f172a;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.45;
+        }
+        .wrap{max-width:var(--maxw);margin:40px auto;padding:0 20px;}
+        header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;}
+        .logo{display:flex;align-items:center;gap:12px;font-weight:800}
+        .logo .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#6a8cff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+        nav{display:flex;gap:18px;color:var(--muted);font-weight:600}
+        nav a{color:inherit;text-decoration:none;font-size:14px}
+        /* Hero */
+        .hero{
+            display:grid;
+            grid-template-columns:1fr 420px;
+            gap:28px;
+            align-items:center;
+            background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
+            padding:36px;
+            border-radius:var(--radius);
+            box-shadow:0 6px 30px rgba(16,24,40,0.06);
+        }
+        .hero h1{font-size:36px;margin:0 0 12px;line-height:1.05}
+        .hero p{margin:0 0 18px;color:var(--muted)}
+        .cta-row{display:flex;gap:12px;align-items:center}
+        .btn{
+            display:inline-block;padding:12px 16px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:14px;
+            box-shadow:0 8px 24px rgba(31,111,235,0.18)
+        }
+        .ghost{background:transparent;color:var(--muted);border-radius:10px;padding:10px 14px;font-weight:700}
+        .hero-right{background:linear-gradient(180deg,#fbfdff,#f6fbff);padding:18px;border-radius:12px;display:flex;align-items:center;justify-content:center;}
+        .device{width:360px;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(15,23,42,0.08)}
+        .device img{display:block;width:100%;height:auto}
+        /* features */
+        .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+        .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(15,23,42,0.04);min-height:140px;display:flex;flex-direction:column;gap:10px}
+        .card img{width:48px;height:48px;border-radius:8px;object-fit:cover}
+        .card h3{margin:0;font-size:16px}
+        .card p{margin:0;color:var(--muted);font-size:14px}
+        /* gallery / sections */
+        .section{margin-top:36px}
+        .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+        .media{width:100%;height:260px;background:#e9eefb;border-radius:12px;overflow:hidden}
+        .media img{width:100%;height:100%;object-fit:cover;display:block}
+        .list{display:flex;flex-direction:column;gap:12px}
+        .item{display:flex;gap:12px;align-items:flex-start}
+        .item img{width:76px;height:76px;border-radius:8px;object-fit:cover}
+        .item h4{margin:0;font-size:15px}
+        .item p{margin:0;color:var(--muted);font-size:13px}
+        /* gallery grid */
+        .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+        .gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;display:block}
+        footer{margin:48px 0 80px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+        @media (max-width:980px){
+            .hero{grid-template-columns:1fr; padding:22px}
+            .features{grid-template-columns:repeat(2,1fr)}
+            .two-col{grid-template-columns:1fr}
+            .gallery{grid-template-columns:repeat(2,1fr)}
+            .hero-right{order:2}
+        }
+        @media (max-width:520px){
+            .features{grid-template-columns:1fr}
+            .gallery{grid-template-columns:1fr}
+            header{flex-direction:column;align-items:flex-start;gap:12px}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="logo">
+                <div class="mark">SB</div>
+                <div>
+                    <div style="font-size:14px;color:var(--muted);font-weight:600">SB Studio</div>
+                    <div style="font-size:13px;color:#0f172a">Design & Web</div>
+                </div>
+            </div>
+            <nav>
+                <a href="#">Servicii</a>
+                <a href="#">Portofoliu</a>
+                <a href="#">Despre</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero" aria-label="Intro">
+                <div>
+                    <h1>Construim identități digitale memorabile</h1>
+                    <p>Design elegant, pagini performante și imagini atent selecționate pentru a-ți transforma prezența online.</p>
+                    <div class="cta-row">
+                        <a class="btn" href="#">Vezi portofoliu</a>
+                        <a class="ghost" href="#">Despre serviciile noastre</a>
+                    </div>
+
+                    <div style="display:flex;gap:12px;margin-top:22px">
+                        <div style="background:#fff;padding:10px;border-radius:10px;display:flex;flex-direction:column;min-width:140px;box-shadow:0 6px 18px rgba(15,23,42,0.04)">
+                            <strong style="font-size:18px">120+</strong>
+                            <span style="color:var(--muted);font-size:13px">Proiecte finalizate</span>
+                        </div>
+                        <div style="background:#fff;padding:10px;border-radius:10px;display:flex;flex-direction:column;min-width:140px;box-shadow:0 6px 18px rgba(15,23,42,0.04)">
+                            <strong style="font-size:18px">50+</strong>
+                            <span style="color:var(--muted);font-size:13px">Clienți mulțumiți</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-right" aria-hidden="true">
+                    <div class="device">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0f6cf8e1e7540a4d1f58f3c0a3b4f0d9" alt="exemplu device">
+                    </div>
+                </div>
+            </section>
+
+            <section class="section features" aria-label="Caracteristici">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1526318472351-c75fcf070b1e?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=8c9d6f2f8d9ef5fd7f4aa6b3f8b5a4c1" alt="design">
+                    <h3>Design centrat pe conversii</h3>
+                    <p>Interfețe curate, ierarhie clară și atenție la detalii pentru un impact maxim.</p>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1433b6f3f3f2f9b7d2d6d8e4c6a2b9e3" alt="responsive">
+                    <h3>Responsive & rapid</h3>
+                    <p>Pagini optimizate pentru toate dispozitivele, cu performanță și accesibilitate în centru.</p>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=fb0f2c4f6efa9b3e9c6d6d8b1f2f5c12" alt="imagine">
+                    <h3>Imagini de impact</h3>
+                    <p>Galerii curated și fotografii care spun povestea brandului tău.</p>
+                </div>
+            </section>
+
+            <section class="section two-col" aria-label="Portofoliu">
+                <div>
+                    <div style="font-size:13px;color:var(--muted);font-weight:700;margin-bottom:8px">Portofoliu select</div>
+                    <h2 style="margin:0 0 12px">Proiecte recent finalizate</h2>
+                    <p style="margin:0 0 16px;color:var(--muted)">O selecție de pagini și materiale vizuale dezvoltate pentru clienți din industrii variate.</p>
+
+                    <div class="list">
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=7c9d5a9f3d4a1f8c0e2b8a1f2a3c4b6e" alt="proiect 1">
+                            <div>
+                                <h4>Brand modern pentru startup</h4>
+                                <p>Identitate vizuală și pagină de produs optimizată.</p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1531379410504-44e1f6d7b8a3?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d" alt="proiect 2">
+                            <div>
+                                <h4>Magazin online intuitiv</h4>
+                                <p>Flux de cumpărare simplu și imagini de produs clare.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media">
+                        <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=6c7b9c2b9f4b7c2d3e4f5a6b7c8d9e0f" alt="imagine mare">
+                    </div>
+
+                    <div class="gallery" style="margin-top:12px">
+                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d" alt="galerie 1">
+                        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6" alt="galerie 2">
+                        <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3d2c1b0a9f8e7d6c5b4a392817263544" alt="galerie 3">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=8f7e6d5c4b3a2918172635443d2c1b0a" alt="galerie 4">
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" aria-label="Proces">
+                <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px">
+                    <div style="flex:1;min-width:220px;background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(15,23,42,0.04)">
+                        <strong>1. Strategie</strong>
+                        <p style="margin:8px 0 0;color:var(--muted)">Cercetare și aliniere la obiectivele brandului.</p>
+                    </div>
+                    <div style="flex:1;min-width:220px;background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(15,23,42,0.04)">
+                        <strong>2. Design</strong>
+                        <p style="margin:8px 0 0;color:var(--muted)">Wireframe și vizuale care comunică clar mesajul.</p>
+                    </div>
+                    <div style="flex:1;min-width:220px;background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(15,23,42,0.04)">
+                        <strong>3. Livrare</strong>
+                        <p style="margin:8px 0 0;color:var(--muted)">Fișiere optimizate și ghid de utilizare pentru echipa ta.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div>
+                <div style="font-weight:700">SB Studio</div>
+                <div style="font-size:13px;color:var(--muted)">Str. Exemplu 12, București</div>
+            </div>
+            <div style="font-size:13px;color:var(--muted)">© <span id="year"></span> Toate drepturile rezervate</div>
+        </footer>
+    </div>
+
+    <script>
+        // mic script pentru anul curent
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html></section></div>
